@@ -14,9 +14,6 @@ $(function () {
     });
 
 
- 
-
-
   //slider
   $('.gallery__slider').slick({
     slidesToShow: 4,
@@ -36,17 +33,109 @@ $(function () {
       return false;
     });
 
-    $(".accordion-items .accordion__title").on('click', function() {
-      $(this).parent().find("div.accordion-text").slideToggle('slow');
-      $(this).find('.hidden').toggleClass('active');
+    // $(".accordion-items .accordion__title").on('click', function() {
+    //   $(this).parent().find("div.accordion-text").slideToggle('slow');
+    //   $(this).find('.hidden').toggleClass('active');
       
-    }); 
+    // }); 
+  
+    var accordeon = document.querySelectorAll(".accordion__title")[0];
+var plus = document.querySelectorAll(".accordion__title img")[0];
+var minus = document.querySelectorAll(".accordion__title img")[1];
 
-  /////////////////input//////////////
-  $('input[type="file"], select').styler();
+plus.addEventListener("click", function() {
+if (plus.classList.contains("icon_active"))
+{
+   plus.classList.remove("icon_active");
+   plus.classList.add("icon__hidden");
+   minus.classList.add("icon_active");
+}
+else
+{
+   plus.classList.remove("icon__hidden");
+   plus.classList.add("icon_active");
+   minus.classList.remove("icon_active");
+}
+});
 
+minus.addEventListener("click", function() {
+if (minus.classList.contains("icon_active"))
+{
+   minus.classList.remove("icon_active");
+   plus.classList.add("icon_active");
+}
+else
+{
+   minus.classList.add("icon_active");
+}
+});
+
+var accordeon = document.querySelectorAll(".accordion__title")[1];
+var plus = document.querySelectorAll(".accordion__title img")[0];
+var minus = document.querySelectorAll(".accordion__title img")[1];
+
+plus.addEventListener("click", function() {
+if (plus.classList.contains("icon_active"))
+{
+   plus.classList.remove("icon_active");
+   plus.classList.add("icon__hidden");
+   minus.classList.add("icon_active");
+}
+else
+{
+   plus.classList.remove("icon__hidden");
+   plus.classList.add("icon_active");
+   minus.classList.remove("icon_active");
+}
+});
+
+minus.addEventListener("click", function() {
+if (minus.classList.contains("icon_active"))
+{
+   minus.classList.remove("icon_active");
+   plus.classList.add("icon_active");
+}
+else
+{
+   minus.classList.add("icon_active");
+}
+});
+
+var accordeon = document.querySelectorAll(".accordion__title")[2];
+var plus = document.querySelectorAll(".accordion__title img")[0];
+var minus = document.querySelectorAll(".accordion__title img")[1];
+
+plus.addEventListener("click", function() {
+if (plus.classList.contains("icon_active"))
+{
+   plus.classList.remove("icon_active");
+   plus.classList.add("icon__hidden");
+   minus.classList.add("icon_active");
+}
+else
+{
+   plus.classList.remove("icon__hidden");
+   plus.classList.add("icon_active");
+   minus.classList.remove("icon_active");
+}
+});
+
+minus.addEventListener("click", function() {
+if (minus.classList.contains("icon_active"))
+{
+   minus.classList.remove("icon_active");
+   plus.classList.add("icon_active");
+}
+else
+{
+   minus.classList.add("icon_active");
+}
+});
     
 
+  /////////////////input//////////////
+  $('input[type="file"], select').styler();   
+ 
   
   
 });
