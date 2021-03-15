@@ -94,7 +94,7 @@ body {
   top: -36px;
   right: -800px;  
   height: 100vh;
-  background-color: rgba(26,26,26,0.71); 
+  background-color: rgba(26,26,26,0.65); 
     
 }
 .menu-show {
@@ -110,7 +110,7 @@ body {
   max-width: 600px;
   top: 220px;
   right: 0;
-  z-index: 0;
+  z-index: -10;
 }
 .menu__list:hover #slide__menu {
   animation: rotation 10s infinite linear;
@@ -475,6 +475,7 @@ h1 {
   align-items: center;
   max-width: 577px;  
   margin-bottom: 15px;
+  
 }
 .quality__text {
   margin-left: 15px;
@@ -597,8 +598,10 @@ h1 {
   padding-bottom: 55px;
   color: #fff;
 }
-.use__bg {   
-
+.use__bg {  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: crnter;
   img {    
     position: absolute;          
     z-index: 5;  
@@ -608,7 +611,7 @@ h1 {
   min-width: 383px;
   max-height: 406px;
   left: -75px;
-  top: 0;  
+  top: 15px;  
 }
 .use__bg-right { 
   max-width: 587px;
@@ -721,7 +724,7 @@ h1 {
   padding-bottom: 70px;
 }
 .gallery__title {
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 .gallery__slider-item {
   min-height: 200px;
@@ -741,8 +744,8 @@ h1 {
   position: absolute;
   max-width: 664px;
   max-height: 694px;
-  right: 0;
-  top: -40px;
+  right: -32px;
+  top: -30px;
   z-index: 12;
 }
 .map__inner {
@@ -752,8 +755,8 @@ h1 {
 .maps__group {
   position: absolute;
   max-height: 642px;
-  top: -50px;
-  right: 33px;
+  top: -70px;
+  right: 0px;
   z-index: 20;
 }
 .circle__bg {
@@ -830,15 +833,18 @@ h1 {
   }
 }
 /////accordion
+.accordion-items {
+  margin-bottom: 15px;  
+  
+}
 .accordion__title {
   max-width: 100%;
   height: 90px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   background-color: #f2f2f1;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  border-radius: 8px;  
   padding: 0px 30px;
   font-size: 18px;
   font-weight: 600;
@@ -859,36 +865,55 @@ h1 {
 }
 .accordion-text {
   box-sizing: border-box;
-  height: 526px;  
+  max-width: 1460px;
+  height: 500px;    
+  margin-top: 25px;
   display: none;
   font-size: 16px;
   line-height: 24px;
   color: #3E3E3E;
-  padding-right: 30px;
+  padding-right: 75px; 
+  overflow: hidden;    
+  width: 100%;   
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 6px; 
+  }
+ 
+  &::-webkit-scrollbar-track {      
+      border-radius: 6px;
+      background: #E5E5E5;
+  }
   
-  p {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }    
-  
+  &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background: $red;      
+      
+  }  
 }
 .accirdion-text__inner {
-  ::-webkit-scrollbar {
-    width: 12px;
-}
+  padding-right: 75px;  
+  p {
+    padding-top: 15px;    
+  }
  
-  ::-webkit-scrollbar-track {
-      
-      border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      
-  }
 }
-
-
+.text__list {   
+  li {
+    padding-left: 15px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $red;
+      left: 0px;
+      top: 11px;
+    }
+}
+}
 
 
 
@@ -968,11 +993,19 @@ h1 {
     font-weight: 300;
     margin-left: 25px;
   }
+  a:hover {
+    color: #a3a3a3;
+    transition: $trans;
+  }
 }
 .footer__col-list,
 .footer__contacts-list  {
   li {
     margin-bottom: 20px;
+  }
+  a:hover {
+    color: #a3a3a3;
+    transition: $trans;
   }
 }
 .footer__menu-items {
