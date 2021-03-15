@@ -430,6 +430,12 @@ h1 {
    width: 80px;
   height: 80px;
   z-index: 15;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  transition: $trans;
+  &:hover {
+    border: 3px solid $red;
+  }
 }
 .header__spin {
   img {
